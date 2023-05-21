@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudentGraduation
+namespace StudentGraduation.Service
 {
     public class DataService : DBService
     {

@@ -1,4 +1,5 @@
 using Microsoft.Data.SqlClient;
+using StudentGraduation.Service;
 using System.Data;
 using System.Security.Policy;
 
@@ -80,7 +81,10 @@ namespace StudentGraduation
         {
             combGroup.SelectedIndex = -1;
             combGroup.Items.Clear();
-            dataService.GetGroupsCollectionWithFaculty(combGroup, combFaculty.SelectedItem.ToString());
+            if (combFaculty.SelectedIndex != -1)
+            {
+                dataService.GetGroupsCollectionWithFaculty(combGroup, combFaculty.SelectedItem.ToString());
+            }
         }
 
         private void pbRefresh_Click(object sender, EventArgs e)

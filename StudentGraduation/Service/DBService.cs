@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using StudentGraduation.DB;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,14 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms.VisualStyles;
 using System.Xml.Linq;
 
-namespace StudentGraduation
+namespace StudentGraduation.Service
 {
     public class DBService
     {
         DataBase dataBase = new DataBase();
         public DBService()
         {
-            
+
         }
         private List<string> Getter(string query)
         {

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using StudentGraduation.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,10 +12,10 @@ using System.Windows.Forms;
 
 namespace StudentGraduation
 {
-    public partial class FormAddFaculty : Form
+    public partial class FormAddSubject : Form
     {
         DataService dataService = new DataService();
-        public FormAddFaculty()
+        public FormAddSubject()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -22,8 +23,8 @@ namespace StudentGraduation
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            var facultyName = tbFaculty.Text;
-            bool result = dataService.AddFaculty(facultyName);
+            var subjectName = tbSubject.Text;
+            bool result = dataService.AddSubject(subjectName);
             if (result)
             {
                 MessageBox.Show("Запись успешно создана!", "Успех!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -36,7 +37,7 @@ namespace StudentGraduation
 
         private void pbClear_Click(object sender, EventArgs e)
         {
-            tbFaculty.Clear();
+            tbSubject.Clear();
         }
     }
 }

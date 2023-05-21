@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using StudentGraduation.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,14 +53,20 @@ namespace StudentGraduation
             combStudent.Items.Clear();
             combGroup.SelectedIndex = -1;
             combGroup.Items.Clear();
-            dataService.GetGroupsCollectionWithFaculty(combGroup, combFaculty.SelectedItem.ToString());
+            if (combFaculty.SelectedIndex != -1)
+            {
+                dataService.GetGroupsCollectionWithFaculty(combGroup, combFaculty.SelectedItem.ToString());
+            }
             dataService.GetStudentCollection(combStudent);
         }
 
         private void combGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
             combStudent.Items.Clear();
-            dataService.GetStudentsCollectionWithGroup(combStudent, combGroup.SelectedItem.ToString());
+            if (combGroup.SelectedIndex != -1)
+            {
+                dataService.GetStudentsCollectionWithGroup(combStudent, combGroup.SelectedItem.ToString());
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

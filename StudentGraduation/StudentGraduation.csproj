@@ -13,7 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FormSignUp.cs">
+    <Compile Update="FormAddGraduation - Копировать.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormAddStudent - Копировать.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormSignUp.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
